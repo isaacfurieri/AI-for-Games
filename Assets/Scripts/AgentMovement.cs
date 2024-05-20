@@ -11,6 +11,9 @@ public class AgentMovement : Agent
     private float moveSpeed = 5.0f;
     private float fireForce = 15f;
     private float angle;
+    public float maxHealth = 100.0f;
+    public float currentHealth = 1.0f;
+    public HealthBar healthBar;
 
     private bool m_Shoot;
 
@@ -28,11 +31,8 @@ public class AgentMovement : Agent
     // Start is called when game starts
     void Start()
     {
-    }
-    private void Update()
-    {
-
-        //DrawLine(Vector3 start, Vector3 end, Color color = Color.white, float duration = 0.0f, bool depthTest = true);
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -166,21 +166,36 @@ public class AgentMovement : Agent
         Vector3 target = new Vector3(Mathf.Cos(_angle), Mathf.Sin(_angle), 0);
         return (transform.forward + target).normalized;
     }
+    void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        //currentHealth = Mathf.Lerp(currentHealth, damage, 2.0f);
+        healthBar.SetHealth(currentHealth);
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Lava"))
         {
             //Debug.Log("LAVA COLLISION");
-            AddReward(-5);
+            //AddReward(-5);
             //EndEpisode();
+            TakeDamage(0.3f);
 
         }
         if (collision.gameObject.CompareTag("Target"))
         {
+            TakeDamage(0.3f);
             //Debug.Log("TARGET COLLISION");
-            AddReward(-5);
+            //AddReward(-5);
             //EndEpisode();
+        }
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            //Debug.Log("TAKEN SHOT");
+            //AddReward(-5);
+            //EndEpisode();
+            TakeDamage(20.0f);
         }
     }
 

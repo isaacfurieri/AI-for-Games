@@ -11450,7 +11450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2716527359690678429, guid: 9504e97aacfb7fb4499e9850a49c5cd1, type: 3}
       propertyPath: m_Name
-      value: 1``
+      value: Environment (32)
       objectReference: {fileID: 0}
     - target: {fileID: 2716527359690678429, guid: 9504e97aacfb7fb4499e9850a49c5cd1, type: 3}
       propertyPath: m_TagString
