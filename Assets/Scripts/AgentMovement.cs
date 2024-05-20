@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 
 public class AgentMovement : Agent
 {
+    public GameOverScreen GameOverScreen;
+
     private float moveSpeed = 5.0f;
     private float fireForce = 15f;
     private float angle;
@@ -33,6 +35,14 @@ public class AgentMovement : Agent
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+    }
+
+    private void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            GameOverScreen.GameOver(true);
+        }
     }
 
     public override void CollectObservations(VectorSensor sensor)

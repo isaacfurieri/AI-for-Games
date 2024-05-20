@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameOverScreen GameOverScreen;
+
     public Animator animator;
     public float moveSpeed = 5.0f;
     public static PlayerMovement Instance;
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called when game starts
     void Start()
     {
+        Time.timeScale = 1f;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -77,6 +80,11 @@ public class PlayerMovement : MonoBehaviour
         {
             lava = true;
             lavaTimer = 0.0f;
+        }
+
+        if(currentHealth <= 0)
+        {
+            GameOverScreen.GameOver(false);
         }
 
         //Player animation with RPC -- RPC goes on player will fire numbers 
