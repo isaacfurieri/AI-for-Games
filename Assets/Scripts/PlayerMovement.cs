@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+
+        Vector2 lookDir = mousePos - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         if (!isFacingRight && movement.x > 0)
@@ -65,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButton(0) & fireDelay < timer)
         {
-            //weapon.Attack(rb.position, mousePosition);
+            weapon.Attack(angle, lookDir);
             animator.SetBool("isAttacking", true);
             moveSpeed = 0;
             timer = 0.0f;

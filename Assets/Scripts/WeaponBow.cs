@@ -15,17 +15,17 @@ public class WeaponBow : MonoBehaviour
     void Update()
     {
         // IF MOUSE CLICK
-        if(Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
 
-            Vector2 lookDir = mousePos - transform.position;
-            Debug.Log("mouse pos: " +mousePos);
-            Debug.Log("look dir: " +lookDir);
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            Debug.Log("Angle: " + angle);
-            Attack(angle, lookDir);
-        }
+        //    Vector2 lookDir = mousePos - transform.position;
+        //    Debug.Log("mouse pos: " +mousePos);
+        //    Debug.Log("look dir: " +lookDir);
+        //    float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        //    Debug.Log("Angle: " + angle);
+        //    Attack(angle, lookDir);
+        //}
         
     }
 

@@ -11,7 +11,7 @@ public class AgentMovement : Agent
     public GameOverScreen GameOverScreen;
 
     private float moveSpeed = 5.0f;
-    private float fireForce = 15f;
+    private float fireForce = 20f;
     private float angle;
     public float maxHealth = 100.0f;
     public float currentHealth = 1.0f;
@@ -117,7 +117,7 @@ public class AgentMovement : Agent
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
 
         //Fire shoot
-        rb.AddForce(arrowDir * fireForce, ForceMode2D.Impulse);
+        rb.AddForce(arrowDir.normalized * fireForce, ForceMode2D.Impulse);
         Arrow shootedArrow = arrow.GetComponent<Arrow>();
 
         //Check what has arrow hitted
@@ -130,28 +130,28 @@ public class AgentMovement : Agent
     private void OnArrowHit(bool hasHit, Arrow shootedArrow, GameObject targetHitted)
     {
         //Check hits and add rewards
-        if (hasHit)
-        {
-            AddReward(30);
-            m_Shoot = hasHit;
-            Debug.Log("SHOOT TARGET");
-            EndEpisode();
-        }
-        else
-        {
-            if (targetHitted.gameObject.CompareTag("Lava"))
-            {
-                AddReward(-3);
-                Debug.Log("SHOOT LAVA");
-                //EndEpisode();
-            }
-            else
-            {
-                AddReward(-3);
-                Debug.Log("SHOOT MISS");
-                //EndEpisode();
-            }
-        }
+        //if (hasHit)
+        //{
+        //    AddReward(30);
+        //    m_Shoot = hasHit;
+        //    Debug.Log("SHOOT TARGET");
+        //    EndEpisode();
+        //}
+        //else
+        //{
+        //    if (targetHitted.gameObject.CompareTag("Lava"))
+        //    {
+        //        AddReward(-3);
+        //        Debug.Log("SHOOT LAVA");
+        //        //EndEpisode();
+        //    }
+        //    else
+        //    {
+        //        AddReward(-3);
+        //        Debug.Log("SHOOT MISS");
+        //        //EndEpisode();
+        //    }
+        //}
     }
     public void RandomPositions()
     {
@@ -195,7 +195,7 @@ public class AgentMovement : Agent
         }
         if (collision.gameObject.CompareTag("Target"))
         {
-            TakeDamage(0.3f);
+            //TakeDamage(0.3f);
             //Debug.Log("TARGET COLLISION");
             //AddReward(-5);
             //EndEpisode();
