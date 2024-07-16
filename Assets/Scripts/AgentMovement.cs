@@ -9,7 +9,9 @@ using Random = UnityEngine.Random;
 public class AgentMovement : Agent
 {
     public GameOverScreen GameOverScreen;
+    public Animator animator;
 
+    Vector2 speed;
     private float moveSpeed = 5.0f;
     private float fireForce = 20f;
     private float angle;
@@ -18,6 +20,7 @@ public class AgentMovement : Agent
     public HealthBar healthBar;
 
     private bool m_Shoot;
+    private bool isFacingRight = true;
 
     Vector2 arrowDir;
 
@@ -79,6 +82,23 @@ public class AgentMovement : Agent
         var forward = Mathf.Clamp(continuousActions[0], -1f, 1f);
         var right = Mathf.Clamp(continuousActions[1], -1f, 1f);
         angle = Mathf.Clamp(continuousActions[2], -1f, 1f) * 180;
+
+        animator.SetFloat("Horizontal", right);
+        animator.SetFloat("Vertical", forward);
+
+        speed.x = right;
+        speed.y = forward;
+
+        animator.SetFloat("Speed", speed.sqrMagnitude);
+
+        if (!isFacingRight && right > 0)
+        {
+            Flip();
+        }
+        else if (isFacingRight && right < 0)
+        {
+            Flip();
+        }
 
         this.transform.localPosition += (new Vector3(forward, right) * moveSpeed * Time.deltaTime);
 
@@ -255,5 +275,12 @@ public class AgentMovement : Agent
         //Shooting
         //shooted = 1 :: not shooted == 0;
         //discreteActions[0] = 1;
+    }
+    public void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 }

@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
         if (!isFacingRight && movement.x > 0)
         {
             Flip();
-            Debug.Log("Enter");
         }
         else if (isFacingRight && movement.x < 0)
         {
