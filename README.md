@@ -32,12 +32,12 @@ Navigate to Project Directory: Use the cd command to navigate to the folder wher
 
 Run Training Command: Execute the following command, replacing shoot2DArrow with your desired unique name for this training session:
 
-mlagents-learn Assets/ML-Agents/configuration.yaml --run-id=shoot2DArrow
+mlagents-learn Assets/ML-Agents/configuration.yaml --run-id=shootTraiing
 This command tells mlagents-learn to use the Assets/ML-Agents/configuration.yaml file for training and assigns the run ID first3DBallRun for identification.
 
-In ML-Agents, the Behavior Name of your agent in the training environment needs to match the base name of the corresponding YAML configuration file. This ensures that the training process uses the correct settings for your agent's behavior.
+# _Here's a breakdown of the connection:_
 
-_Here's a breakdown of the connection:_
+In ML-Agents, the Behavior Name of your agent in the training environment needs to match the base name of the corresponding YAML configuration file. This ensures that the training process uses the correct settings for your agent's behavior.
 
 YAML Configuration File: This file defines the hyperparameters and training parameters for your agent's behavior. It usually resides in the config folder within your project or the ml-agents repository (depending on your setup).
 Behavior Name: This is a property assigned to your agent in the Unity scene. It essentially identifies the specific behavior the agent should follow during training.
