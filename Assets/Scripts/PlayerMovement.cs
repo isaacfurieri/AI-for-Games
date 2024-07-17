@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public WeaponBow weapon;
 
     public float fireDelay = 5.0f;
+    public float animDelay = 0.20f;
     public float dmgDelay = 1.0f;
     public float timer = 0.0f;
     public float lavaTimer = 0.0f;
@@ -73,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 0;
             timer = 0.0f;
         }
-        else if (!Input.GetMouseButtonUp(0))
+        else if (!Input.GetMouseButton(0))
         {
             animator.SetBool("isAttacking", false);
             moveSpeed = 5.0f;
