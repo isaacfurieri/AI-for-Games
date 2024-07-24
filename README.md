@@ -65,10 +65,11 @@ Contributing
 We welcome contributions to this project! If you have any improvements or suggestions, feel free to submit a pull request.
 
 # License
-This project is free to use under [MIT License]. Please refer to the LICENSE file for details.
+This project is free to use under [MIT License](https://opensource.org/license/mit). Please refer to the LICENSE file for details.
 
 Contact
 If you have any questions or feedback, feel free to reach out to me:
 
 [GIT](https://github.com/isaacfurieri)
+
 [LinkedIn](https://www.linkedin.com/in/isaac-furieri-19788474/)
