@@ -5,7 +5,8 @@ This project is a 2D shooting game where you can train an AI opponent using Prox
 # Getting Started
 To set up this project, you'll need the following:
 
-Unity 2022.3.6f1 (https://unity.com/download)
+Unity 2022.3.6f1  [Unity](https://unity.com/download)
+
 ML-Agents for Unity (https://github.com/topics/unity-ml-agents)
 Installing ML-Agents:
 
