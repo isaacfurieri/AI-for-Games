@@ -31,7 +31,7 @@ Open a Terminal: Launch a command prompt or terminal window on your computer.
 
 Navigate to Project Directory: Use the cd command to navigate to the folder where you cloned this repository.
 
-Run Training Command: Execute the following command, replacing shoot2DArrow with your desired unique name for this training session:
+Run Training Command: Execute the following command, replacing `shootTraining` with your desired unique name for this training session:
 
 ```mlagents-learn Assets/ML-Agents/configuration.yaml --run-id=shootTraining```
 
