@@ -17,8 +17,9 @@ Follow the installation guide: [Instalation Guide](https://github.com/Unity-Tech
 
 Open the AITraining scene in Unity.
 Use the ML-Agents interface to start training the AI.
-If you're unfamiliar with ML-Agents, refer to the getting started tutorial: [Getting Started](https://github.com/Unity-Technologies/ml-agents/blob/develop/docs/Getting-Started.md)
-Configuration:
+If you're unfamiliar with ML-Agents, refer to the getting started tutorial: [Getting Started Guide](https://github.com/Unity-Technologies/ml-agents/blob/develop/docs/Getting-Started.md)
+
+#Configuration:#
 
 The configuration file used for training is located at `Assets/ML-Agents/configuration.yaml` within the project folder.
 
