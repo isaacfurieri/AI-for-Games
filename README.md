@@ -11,8 +11,7 @@ ML Agents[ML-Agents for Unity](https://github.com/topics/unity-ml-agents)
 Installing ML-Agents:
 
 Download the ML-Agents package from the GitHub repository.
-Follow the installation guide: [Guide](https://github.com/Unity-Technologies/ml-agents/blob/develop/docs/Installation.md)
-Usage
+Follow the installation guide: [Instalation Guide](https://github.com/Unity-Technologies/ml-agents/blob/develop/docs/Installation.md)
 
 # Training a New Model:
 
