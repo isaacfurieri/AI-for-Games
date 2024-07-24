@@ -35,7 +35,7 @@ Run Training Command: Execute the following command, replacing shoot2DArrow with
 
 ```mlagents-learn Assets/ML-Agents/configuration.yaml --run-id=shootTraining```
 
-This command tells mlagents-learn to use the `Assets/ML-Agents/configuration.yaml` file for training and assigns the run ID first3DBallRun for identification.
+This command tells mlagents-learn to use the `Assets/ML-Agents/configuration.yaml` file for training and assigns the run ID shootTraining for identification.
 
 # _Here's a breakdown of the connection:_
 
