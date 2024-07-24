@@ -33,7 +33,7 @@ Navigate to Project Directory: Use the cd command to navigate to the folder wher
 
 Run Training Command: Execute the following command, replacing shoot2DArrow with your desired unique name for this training session:
 
-```mlagents-learn Assets/ML-Agents/configuration.yaml --run-id=shootTraiing```
+```mlagents-learn Assets/ML-Agents/configuration.yaml --run-id=shootTraining```
 
 This command tells mlagents-learn to use the `Assets/ML-Agents/configuration.yaml` file for training and assigns the run ID first3DBallRun for identification.
 
